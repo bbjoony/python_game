@@ -33,7 +33,7 @@ while running:
             running = False #게임이 진행중이 아님
 
         if event.type == pygame.KEYDOWN: #키가 눌러졌는지 확인
-            if event.key == pygame.K_LEFT:
+            if event.key == pygame.K_LEFT: #키를 왼쪽으로 누르면 5만큼 이동
                 to_x -= 5
             elif event.key == pygame.K_RIGHT:
                 to_x += 5
