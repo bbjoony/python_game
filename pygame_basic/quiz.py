@@ -1,7 +1,7 @@
 import random
 import pygame
 ##############################################
-#기본 최기화 (반드시 해야 하는 것들)
+#기본 초기화 (반드시 해야 하는 것들)
 pygame.init() #초기화, 반드시 수행되어야 함
 
 #화면 크기 설정
@@ -10,7 +10,7 @@ screen_height = 640 #세로 크기
 screen = pygame.display.set_mode((screen_width, screen_height))
 
 #화면 타이틀 설정
-pygame.display.set_caption("게임 이름")
+pygame.display.set_caption("Avoid_the_Bomb")
 
 # FPS
 clock = pygame.time.Clock()
