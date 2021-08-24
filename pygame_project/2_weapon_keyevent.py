@@ -81,18 +81,23 @@ while running:
         character_x_pos = screen_width - character_width
 
     #무기 위치 조정
-    weapons = [ [w[0], w[1] - weapon_speed] for w in weapons] #무기 위치를 위로 올려줌
+    weapons = [ [w[0], w[1] - weapon_speed] for w in weapons if w[1] > 0] #무기 위치를 위로 올려줌
 
+    #천장에 닿은 무기 없애기 -> 무기 위치 조정 항목에 추가
+    # weapons = [ [w[0], w[1]] for w in weapons if w[1] > 0]
 
     # 4.충돌 처리 
 
     # 5. 화면에 그리기
     screen.blit(background, (0,0))
+    
+    for weapon_x_pos, weapon_y_pos in weapons:
+        screen.blit(weapon, (weapon_x_pos, weapon_y_pos))
+
     screen.blit(stage, (0, screen_height - stage_height))
     screen.blit(character, (character_x_pos, character_y_pos))
 
-    for weapon_x_pos, weapon_y_pos in weapons:
-        screen.blit(weapon, (weapon_x_pos, weapon_y_pos))
+
 
     pygame.display.update() #게임화면 다시 그리기
 
