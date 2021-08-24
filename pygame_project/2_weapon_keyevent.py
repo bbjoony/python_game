@@ -89,6 +89,7 @@ while running:
     # 4.충돌 처리 
 
     # 5. 화면에 그리기
+    # screen.blit 순서대로 그려지므로 배경 -> 무기 -> 스테이지 -> 캐릭터 순으로 출력되도록 조정 2021.08.24(화) AM09:18
     screen.blit(background, (0,0))
     
     for weapon_x_pos, weapon_y_pos in weapons:
@@ -96,8 +97,6 @@ while running:
 
     screen.blit(stage, (0, screen_height - stage_height))
     screen.blit(character, (character_x_pos, character_y_pos))
-
-
 
     pygame.display.update() #게임화면 다시 그리기
 
